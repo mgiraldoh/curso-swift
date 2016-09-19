@@ -1,0 +1,20 @@
+//: Playground - noun: a place where people can play
+
+import Cocoa
+
+// primer ejercicio del curso de SWIFT el TEC de Monterrey
+
+for var nro in 0 ... 100 {
+   // condiciones no excluyentes
+    if nro >= 30 && nro <= 40{
+        print (" \(nro)   Viva Swift !!!")}
+    
+    if (nro % 5 == 0){ print(" \(nro)   Bingo ")}
+    
+    if (nro % 2  == 0) {
+        print (" \(nro) Par")
+        }
+        else
+    { print (" \(nro)  Impar")}
+    
+}
