@@ -28,21 +28,18 @@ enum Velocidades : Int {
         switch velocidad {
             case .Apagado:
                 velocidad = .VelocidadBaja
-                actual = 20
                 velocidadEnCadena = "Baja Velocidad"
             case .VelocidadBaja:
                 velocidad = .VelocidadMedia
-                  actual = 50
                 velocidadEnCadena = "Velocidad Media"
             case .VelocidadMedia:
-                  actual = 120
                 velocidad = .VelocidadAlta
                 velocidadEnCadena = "Alta Velocidad"
             case .VelocidadAlta:
                 velocidad = .VelocidadMedia
                 velocidadEnCadena = "Media Velocidad"
-                actual = 50
         }
+          actual = velocidad.rawValue
         return (actual, velocidadEnCadena)
       } // termina  la Func
     
@@ -53,10 +50,9 @@ var speed : Int=0
 var kph : String="Apagado"
     
   for _ in 1...20 {
-        print ("\(speed)km/h ,  \(kph)")
+        print ("\(speed) km/h ,  \(kph)")
         (speed,kph) = auto.cambioDeVelocidad()
     } // fin del For
-
 print("\n\t Fin de la tarea SEMANA 4" )
 
 // fin del programa
