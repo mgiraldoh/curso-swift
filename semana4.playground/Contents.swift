@@ -1,0 +1,62 @@
+//: Playground - noun: a place where people can play
+
+import UIKit
+
+print ("Velocimetro \n\r")
+print("\tpor Mauricio giraldo\n\r")
+
+enum Velocidades : Int {
+    
+    case Apagado=0, VelocidadBaja=20, VelocidadMedia=50, VelocidadAlta=120
+
+    init( velocidadInicial : Velocidades ){
+        self = velocidadInicial
+    }
+} // termina la enum
+
+ class Auto {
+    
+    var velocidad : Velocidades
+
+     init(){
+        self.velocidad = Velocidades.Apagado
+        }
+
+    func cambioDeVelocidad( ) -> ( actual : Int, velocidadEnCadena: String) {
+        var actual : Int
+        var velocidadEnCadena : String
+        switch velocidad {
+            case .Apagado:
+                velocidad = .VelocidadBaja
+                actual = 20
+                velocidadEnCadena = "Baja Velocidad"
+            case .VelocidadBaja:
+                velocidad = .VelocidadMedia
+                  actual = 50
+                velocidadEnCadena = "Velocidad Media"
+            case .VelocidadMedia:
+                  actual = 120
+                velocidad = .VelocidadAlta
+                velocidadEnCadena = "Alta Velocidad"
+            case .VelocidadAlta:
+                velocidad = .VelocidadMedia
+                velocidadEnCadena = "Media Velocidad"
+                actual = 50
+        }
+        return (actual, velocidadEnCadena)
+      } // termina  la Func
+    
+} // termina la CLASS
+
+var auto = Auto()
+var speed : Int=0
+var kph : String="Apagado"
+    
+  for _ in 1...20 {
+        print ("\(speed)km/h ,  \(kph)")
+        (speed,kph) = auto.cambioDeVelocidad()
+    } // fin del For
+
+print("\n\t Fin de la tarea SEMANA 4" )
+
+// fin del programa
